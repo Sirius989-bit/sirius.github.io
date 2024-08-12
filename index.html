@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="styles.css">
+    <title>Site Interaction</title>
+</head>
+<body>
+    <audio autoplay="autoplay" height="100" width="100" id="myAudio">
+        <source src="Background-Music-Site.mp3" type="audio/mp3"/>
+        <embed height="100" width="100" src="Background-Music-Site.mp3"/>
+    </audio>
+
+    <p class="background">
+        <img src="Backgroud-Site.jpg" alt="Background" width="1400" height="1000">
+    </p>
+
+    <p class="police1">
+        ･ﾟ✧: ･.˚｡･ﾟ✧: ･ . : ⋆ ｡ﾟ☁︎ ｡⋆｡ ﾟ ˚. ✦.˳·˖✶ ⋆ ☾: ･ . ﾟ｡⋆ ༄ ˖° ೃ ࿔ * ੈ ‧ ₊˚  ﾟ｡⋆ ༺☆ *  ੈ ✩‧ ₊˚‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ ‎ *:･☽˚｡  ･ﾟ✧: : ⋆ ｡ﾟ: ･ . ☁︎ ｡⋆｡ ﾟ ˚. ✦.˳·･: ･ﾟ✧ : ･. ･ﾟ✧: ･ . :  ⋆ ｡ﾟ☁︎ ｡⋆˚｡･ﾟ✧ . : ⋆｡ﾟ ⋆｡☁︎｡ 
+    </p>
+
+    <p class="police2">
+        ⋆ ˚｡⋆୨🌸୧⋆ ˚｡⋆ 
+    </p>
+
+    <p class="moon">🌖</p>
+    <p class="star">✨</p>
+    <p class="line1">_____________________</p>
+    <p class="line2">\</p>
+
+    <p class="button1">
+        <button type="button" id="myButton1" onclick="handleHeartButtonClick();" style="background-color: #e74c3c; border: none;">Click on me :3</button><br>
+        <span id="typedText2" style="position: absolute; top: -150px; left: -120px; z-index: 6; color:#FFB7C5; font-family: 'Lobster', cursive; white-space: nowrap; display: none;"></span>
+    </p>
+
+    <div class="heart-button" id="heartButton" style="top: -650px; left: 632px"></div>
+    
+    <p class="button2">
+        <button type="button" id="myButton2" onclick="handleButton2Click();" style="background-color: #000000; border: none; font-size: 18px; color: white;">Mhh ?</button><br>
+        <span id="typedText1" style="position: absolute; top: 30px; left: -360px; z-index: 6; color:#FFB7C5; font-family: 'Lobster', cursive; white-space: nowrap; display: none;"></span>
+    </p>
+    <p class="button3" style="display: none;">
+        <button type="button" id="myButton3" onclick="handleButton3Click();" style="background-color: #000000; border: none; font-size: 18px; color: white; position: absolute; top: -760px; left: 440px; width: 40px; height: 40px;">And ?</button><br>
+        
+        <span id="typedText3" style="position: absolute; font-size: 14px; top: -640px; left: 440px; z-index: 10; color:#FFB7C5; font-family: 'Lobster', cursive; white-space: nowrap; display: none;">Test</span>
+        <span id="typedText4" style="position: absolute; font-size: 14px; top: -610px; left: 470px; z-index: 10; color:#FFB7C5; font-family: 'Lobster', cursive; white-space: nowrap; display: none;">Test</span>
+    </p>
+
+    <script type="text/javascript">
+        function typeText(text, elementId, delay, callback) {
+            let i = 0;
+            let element = document.getElementById(elementId);
+            element.innerHTML = ""; 
+            function type() {
+                if (i < text.length) {
+                    element.innerHTML += text.charAt(i);
+                    i++;
+                    setTimeout(type, delay);
+                } else if (callback) {
+                    callback();
+                }
+            }
+            type();
+        }
+
+        function handleHeartButtonClick() {
+            var heartButton = document.getElementById('heartButton');
+            var myButton1 = document.getElementById('myButton1'); 
+            var typedText2 = document.getElementById('typedText2');
+            var button2 = document.querySelector('.button2');
+
+            heartButton.classList.add('liked'); 
+            myButton1.classList.add('clicked'); 
+
+            typedText2.style.display = "inline";
+            typeText("💗 For the birthday of my queen 💗", "typedText2", 100, function() {
+                button2.style.display = "block"; 
+                setTimeout(function() {
+                    button2.classList.add('visible'); 
+                }, 10);
+            });
+        }
+
+        function handleButton2Click() {
+            var typedText1 = document.getElementById('typedText1');
+            var button3 = document.querySelector('.button3');
+
+            typedText1.style.display = "inline";
+            typeText("🌸 I hope you to have the happiest birthday. Darling, I'll give you all my love for the rest of your life 🌸", "typedText1", 100, function() {
+                button3.style.display = "block"; 
+                setTimeout(function() {
+                    button3.classList.add('visible'); 
+                }, 10);
+            });
+        }
+
+        function handleButton3Click() {
+            var typedText3 = document.getElementById('typedText3');
+            var typedText4 = document.getElementById('typedText4');
+
+            typedText3.style.display = "inline";
+            typeText("🌹 I swear you are absolutely perfect. You are the prettiest woman", "typedText3", 100, function() {
+                typedText4.style.display = "inline";
+                typeText("I have never seen. Never forget that, I'm proud of you 🌹", "typedText4", 100);
+            });
+        }
+    </script>
+</body>
+</html>

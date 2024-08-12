@@ -1,0 +1,205 @@
+.background {
+    margin-left: -25px;
+    margin-top: -150px;
+    z-index: 1;
+}
+
+body {
+    height: 100vh;
+    background-image: linear-gradient(to bottom, rgb(0, 0, 0), rgb(12, 12, 42));
+}
+
+.police1 {
+    font-family: 'Arial', sans-serif;
+    position: absolute;
+    top: 0%;
+    z-index: 2;
+    color: white;
+}
+
+.police2 {
+    font-family: 'Arial', sans-serif;
+    font-size: 35px;
+    position: absolute;
+    top: 1%;
+    right: 42%;
+    margin-top: -5px;
+    z-index: 2; 
+    color: white;
+}
+
+.separator {
+    position: absolute;
+    top: 6%;
+    left: 0;
+    width: 100%;
+    border: none;
+    border-top: 2px solid pink;
+    z-index: 2;
+}
+
+
+.moon {
+    position: absolute;
+    top: 5%;
+    right: 2%;
+    font-size: 352px;
+    margin-top: 50px;
+    z-index: 4; 
+    color: white;
+}
+
+.star {
+    position: absolute;
+    z-index: 4;
+    top: 5%;
+    right: 86%;
+    font-size: 100px;
+}
+
+.line1 {
+    position: absolute;
+    z-index: 4;
+    top: 45%;
+    right: 32%;
+    font-size: 20px;
+    color: pink;
+    font-weight: bold;
+}
+
+.line2 {
+    position: absolute;
+    z-index: 4;
+    top: 272px;
+    right: 653px;
+    font-size: 38px;
+    color: pink; 
+    font-weight: bold;
+}
+
+.heart-button {
+    width: 100px;
+    height: 100px;
+    top: -650px;
+    right: -632px;
+    z-index: 1;
+    position: relative;
+    background-color: #e74c3c;
+    transform: rotate(-45deg);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.heart-button::before,
+.heart-button::after {
+    content: "";
+    width: 100px;
+    height: 100px;
+    background-color: #e74c3c;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    transition: background-color 0.5s ease;
+}
+
+.heart-button::after {
+    left: 50px;
+}
+
+.heart-button::before {
+    top: -50px;
+}
+
+.heart-button.liked {
+    background-color: #ff6b81;
+}
+
+.heart-button.liked::before,
+.heart-button.liked::after {
+    background-color: #ff6b81;
+}
+
+.button1 {
+    width: 10px;
+    height: 20px;
+    top: 215px;
+    right: 705px;
+    position: absolute;
+    z-index: 4;
+}
+
+.clicked {
+    background-color: #ff6b81 !important;
+}
+
+.button2 {
+    top: 120px;
+    right: 665px;
+    position: absolute;
+    z-index: 4;
+    opacity: 0;
+    transition: opacity 2s ease, transform 2s ease; 
+    transform: translateY(20px); 
+}
+
+.button2.visible, .button3.visible {
+    opacity: 1; 
+    transform: translateY(0); 
+}
+
+.button3 {
+    width: auto;
+    white-space: nowrap;
+    position: absolute;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 10px;
+    opacity: 0;
+    transition: opacity 2s ease, transform 2s ease; 
+    transform: translateY(20px); 
+}
+
+.typedText1 {
+    white-space: nowrap;
+    overflow: hidden;
+    top: -100px; 
+    left: 1000px; 
+    z-index: 10;
+    border-right: 0.10em solid #FFB7C5;
+    animation: blink-caret 0.7s step-end infinite;
+}
+
+.typedText2 {
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 0.10em solid #FFB7C5;
+    animation: blink-caret 0.7s step-end infinite;
+}
+
+.typedText3 {
+    white-space: nowrap;
+    overflow: hidden;
+    top: -100px; 
+    left: 1000px;
+    border-right: 0.10em solid #FFB7C5;
+    animation: blink-caret 0.7s step-end infinite;
+}
+
+.typedText4 {
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 0.10em solid #FFB7C5;
+    animation: blink-caret 0.7s step-end infinite;
+}
+
+@keyframes blink-caret {
+    from, to {
+        border-color: transparent;
+    }
+    50% {
+        border-color: #FFB7C5;
+    }
+}
+
